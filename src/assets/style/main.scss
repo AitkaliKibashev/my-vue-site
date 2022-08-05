@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;900&display=swap');
+@import "vars";
+@import "mixins";
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  border: 0;
+  outline: 0;
+
+}
+
+body {
+  font-family: 'Rubik', sans-serif;
+
+  background: #F7F5FF;
+  color: #333333;
+}
+
+section {
+  min-height: calc(100vh - 100px);
+}
+
+.container {
+  max-width: 900px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+.section-title {
+  margin-bottom: 40px;
+}
+
+section {
+  padding-top: 40px;
+  padding-left: $sidebar-width;
+
+  @include breakpoint($md-width) {
+    padding-left: 0;
+  }
+}
+
+button {
+  cursor: pointer;
+}
+
+.add-form {
+  margin-bottom: 40px;
+  display: flex;
+  flex-direction: column;
+
+  & > * {
+    margin: 10px 0;
+  }
+
+  .ck-editor__editable_inline {
+    min-height: 160px;
+  }
+
+  h2 {
+    margin-bottom: 30px;
+  }
+
+  .form-header {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    & > *:first-child {
+      width: 90%;
+    }
+  }
+
+  .tags-wrapper {
+    display: flex;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+  }
+
+  .checkboxes__wrapper {
+    display: flex;
+    margin: 0 -10px;
+    margin-bottom: 20px;
+
+    label {
+      margin: 0 10px;
+    }
+  }
+
+  .tag {
+    display: flex;
+    align-items: center;
+
+    margin: 5px;
+    padding: 10px 20px;
+
+    font-size: 16px;
+    font-weight: 500;
+    letter-spacing: .03em;
+    line-height: 140%;
+
+    background: #e6ffec;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all .2s linear;
+
+    &:hover {
+      background: #cff5d7;
+    }
+
+    input {
+      margin-right: 10px;
+    }
+  }
+}
+
+.success {
+  margin-bottom: 20px;
+  color: #35bf35;
+  font-size: 18px;
+}
